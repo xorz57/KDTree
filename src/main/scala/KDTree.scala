@@ -104,7 +104,7 @@ class KDTree {
     var result: Vector[(Double, Point)] = Vector.empty[(Double, Point)]
     var nearestDistance: Double = Double.PositiveInfinity
 
-    def nearestHelper(node: Option[KDNode], point: Point, p: Double, depth: Int): Unit = node match {
+    def knnHelper(node: Option[KDNode], point: Point, p: Double, depth: Int): Unit = node match {
       case None =>
       case Some(node) =>
         _comparisons += 1
@@ -124,20 +124,20 @@ class KDTree {
         }
         val axis: Int = depth % node.point.length
         if (point(axis) < node.point(axis)) {
-          nearestHelper(node.lChild, point, p, depth + 1)
+          knnHelper(node.lChild, point, p, depth + 1)
           if (math.pow(math.abs(point(axis) - node.point(axis)), p) < nearestDistance) {
-            nearestHelper(node.rChild, point, p, depth + 1)
+            knnHelper(node.rChild, point, p, depth + 1)
           }
         } else {
-          nearestHelper(node.rChild, point, p, depth + 1)
+          knnHelper(node.rChild, point, p, depth + 1)
           if (math.pow(math.abs(point(axis) - node.point(axis)), p) < nearestDistance) {
-            nearestHelper(node.lChild, point, p, depth + 1)
+            knnHelper(node.lChild, point, p, depth + 1)
           }
         }
     }
 
     _comparisons = 0
-    nearestHelper(_root, point, p, 0)
+    knnHelper(_root, point, p, 0)
     result.take(q)
   }
 }
