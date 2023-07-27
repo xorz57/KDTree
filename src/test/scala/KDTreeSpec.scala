@@ -43,7 +43,7 @@ class KDTreeSpec extends AnyFlatSpec with should.Matchers {
     tree.comparisons <= points.length shouldBe true
   }
 
-  it should "return the q nearest neighbors" in {
+  it should "return the k nearest neighbors" in {
     (1 to 5).foreach(q => {
       val result1 = tree.knn(point, q, p)
       val result2 = naive.knn(point, q, p)
