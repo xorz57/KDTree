@@ -33,6 +33,8 @@ object KDTreeSample {
 }
 ```
 
+## Output
+
 ```console
 result1: true
 result2: Vector(Vector(4.0, 7.0), Vector(5.0, 4.0))
