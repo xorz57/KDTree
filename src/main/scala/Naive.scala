@@ -35,10 +35,6 @@ class Naive {
     (nearestDistance, nearestPoint)
   }
 
-  //  def nearest(point: KDPoint, p: Double = 2.0): (Double, KDPoint) = {
-  //      _points.map(current => (Metric.minkowski(current, point, p), current)).minBy(_._1)
-  //  }
-
   def knn(point: Point, q: Int, p: Double = 2.0): Vector[(Double, Point)] = {
     var result: Vector[(Double, Point)] = Vector.empty[(Double, Point)]
     var nearestDistance: Double = Double.PositiveInfinity
