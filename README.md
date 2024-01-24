@@ -1,6 +1,7 @@
 # KDTree
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Scala CI](https://github.com/xorz57/KDTree/actions/workflows/scala.yml/badge.svg)](https://github.com/xorz57/KDTree/actions/workflows/scala.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=xorz57_KDTree&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=xorz57_KDTree)
 
 ## Example
